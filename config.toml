@@ -1,43 +1,72 @@
-baseurl                  = "https://peaceful-perlman-43eda4.netlify.com/"           # Your domain name. Must end with "/"
-languageCode             = "en-us"
-defaultContentLanguage   = "en"
-isMultilingual           = false
-title                    = "ZA"
-theme                    = "sam"
-pygmentsStyle            = "monokai"                        # https://help.farbox.com/pygments.html
-pygmentsCodefences       = true
-# googleAnalytics        = ""                               # Tracking code, eg. "UA-111111111-1"
+baseURL = "https://example.com"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Zach Anglin"
+
+# enableGitInfo = true
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+# hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
+rssLimit = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+# googleAnalytics = "UA-123-45"
+# disqusShortname = "yourdiscussshortname"
+
+[author]
+  name = "Zach Anglin"
+
+[blackfriday]
+  # hrefTargetBlank = true
+  # noreferrerLinks = true
+  # nofollowLinks = true
+
+[taxonomies]
+  tag = "tags"
+  # Categories are disabled by default.
 
 [params]
-    dateform             = "Mon Jan 02, 2006"
-    dateformfull         = "Mon Jan 2 2006 15:04:05 EST"
-    favicon              = "sam.ico"
-    homepage             = "main"                           # What to call the home page link
-    galleryFolder        = "images/"                        # Where you've put your images, after "/content/gallery/"
-    clickablePhotos      = false                            # Allow links to the full size images
-    smallPreviewImages   = true                             # Show small images from the subfolder instead of the big versions in the gallery
-                                                            # Note: This will only become active if clickablePhotos is also true.
-    smallImagesSubfolder = "small/"                         # The subfolder for the small versions of the images under the gallery (with trailing slash)
-                                                            # For each image the small version has to have the same filename as the big version.
-    footerText           = "Zach Anglin's Blog"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
 
-# Metadata for Open Graph and Twitter
-    description          = "A simple blog"               # Max 160 characters show in search results
-    images               = ["tn.png"]                       # Image that shows on Twitter cards and Open Graph links to the site
-    title                = "Call me Sam"
+  # Metadata mostly used in document's head
+  # description = ""
+  # images = [""]
+  themeColor = "#494f5c"
 
-[[params.mainMenu]]
-    link = "/posts"
-    text = "posts"
+  homeSubtitle = "A blog about stuff."
+  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  # bgImg = ""  # Homepage background-image URL
 
-# [[params.mainMenu]]
-#     link = "/gallery"
-#     text = "gallery"
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl = "https://github.com/username/repository/commit/"
 
-# [[params.mainMenu]]
-#     link = "/portfolio"
-#     text = "portfolio"
+  # Toggling this option needs to rebuild SCSS, requires Hugo extended version
+  justifyContent = false  # Set "text-align: justify" to `.content`.
 
-[[params.mainMenu]]
-    link = "/about"
-    text = "who is sam?"
+  # Add custom css
+  # customCSS = ["css/foo.css", "css/bar.css"]
+
+  # Social Icons
+  # Check https://github.com/Track3/hermit#social-icons for more info.
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/zachanglin"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/zacharyaanglin"
+
+[menu]
+
+  [[menu.main]]
+    name = "Posts"
+    url = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "about-me/"
+    weight = 20
